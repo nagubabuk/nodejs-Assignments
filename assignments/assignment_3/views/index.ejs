@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+
+</head>
+<body>
+    <%user.forEach(user=>{%>
+        <div class="hero">
+            <h3><%= user.name %></h3>
+            <p><%= user.email %></p>
+            <p><%= user.phone %></p>
+
+        </div>
+  <%})%>
+  <a href="/form">Add User</a>
+   
+    
+</body>
+</html>
