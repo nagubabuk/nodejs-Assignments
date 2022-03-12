@@ -5,7 +5,6 @@ const bodyparser = require("body-parser");
 
 
 router.get("/posts", async (req, res) =>{
-    console.log(req.body)
     const posts = await Post.find();
     res.json({
         status: "success",

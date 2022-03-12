@@ -10,6 +10,7 @@ const app = express();
 
 app.use("/api/v1/posts", (req, res, next) =>{
     var token = req.headers.authorization.split("task ")[1];
+    //console.log(token)
     if(!token){
         return res.status(401).json({
             status: "failed",

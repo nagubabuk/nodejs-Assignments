@@ -59,6 +59,7 @@ router.post("/login", body("email"),body("password"), async (req, res) => {
         }
         
         bcrypt.compare(password, user.password).then(function(result) {
+            console.log(result)
             if(result){
                 var token = jwt.sign({
                     exp: Math.floor(Date.now() / 1000) + (60 * 60),

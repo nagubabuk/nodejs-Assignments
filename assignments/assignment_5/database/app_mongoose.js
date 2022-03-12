@@ -11,3 +11,4 @@ const postSchema = new Schema({
 const Data = mongoose.model('Data', postSchema);
 
 module.exports = Data;
+// 
