@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>     
+</head>
+<body>
+    <div>
+        <table class="table table-hover table-dark">
+            <tr>
+                <th><h3>Name</h3></th>
+                <th><h3>Email</h3></th>
+                <th><h3>Status</h3></th>
+                <th><h3>Remove</h3></th>
+            </tr>
+            <% Data.forEach(user =>{%>
+                <tr>
+                    <% if(user.isPromoted == true){%>
+                        <td class="text-success"><%= user.name %></td>
+                        <td class="text-success"><%= user.email %></td>
+                    <% } else if(user.isPromoted == false) { %>
+                        <td class="text-danger"><%= user.name %></td>
+                        <td class="text-danger"><%= user.email %></td>
+                    <% } else { %>
+                        <td class="text-warning"><%= user.name %></td>
+                        <td class="text-warning"><%= user.email %></td>
+                    <% } %>
+                    <td>
+                        <form method="POST" action="/users/<%= user._id %>/?_method=PUT">
+                            <button class="btn btn-success" id="edit-<%= user.name %>" type="submit">Promote / Demote</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="/users/<%= user._id %>/?_method=DELETE">
+                            <button class="btn btn-danger" id="delete-<%= user.name %>">Delete</button>
+                        </form>
+                    </td>                   
+                </tr>
+            <%})%>
+        </table>
+        <div style="text-align: center;">
+            <a href="/form" ><button class="btn">Add User</button></a>
+        </div>    
+    </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+</body>
+</html> 

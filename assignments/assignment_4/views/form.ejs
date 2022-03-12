@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <header><h2>Adding New Users</h2></header>
+        <form class="form-horizontal" method="post" action="/users/add" role="form" style="width:300px">
+            <div class="form-group">
+                <label for="exampleName">Name: </label>
+                <input class="form-control" type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address: </label>  
+                <input class="form-control" type="text" name="email" id="email">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html> 
+
+
+
